@@ -1,0 +1,7 @@
+namespace: nordsec
+name: team_password_manager
+version: 1.0.0
+readme: README.md
+authors:
+  - Ernest Rekel ernest.rekel@nordsec.com
+description: Ansible wrapper for Team Password Manager https://teampasswordmanager.com

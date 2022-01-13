@@ -1,0 +1,43 @@
+#
+# Group/Host vars example
+#
+# elasticsearch_users:
+#   - { user: "writer", password: "{{ {'id':1517,'auth':'auth:deploy'} | nordsec.team_password_manager.get_password }}", roles: [ "writeonly" ] }
+#   - { user: "reader", password: "{{ {'id':1518,'auth':'auth:deploy'} | nordsec.team_password_manager.get_password }}", roles: [ "readonly" ] }
+#
+
+- name: test
+  hosts: localhost
+  tasks:
+
+  - name: test password filter from collection
+    debug:
+      msg: "{{ {'id':15981,'auth':'auth:deploy'} | nordsec.team_password_manager.get_password }}"
+    # environment:
+    #   TPM_CONFIGURATION_FILE_PATH: /tpm/tpm.ini
+
+  - name: test certificate filter from collection
+    debug:
+      msg: "{{ {'id':3605,'auth':'auth:deploy'} | nordsec.team_password_manager.get_cert }}"
+
+  - name: test module with mutliple passwords
+    nordsec.team_password_manager.team_password_manager:
+      auth: "auth:deploy"
+      get_passwords: [ 15981, 15982, 16445, 16480, 16462 ]
+    register: multiple
+
+  - name: dump test output
+    debug:
+      msg: '{{ multiple }}'
+
+  - name: test module with single password
+    nordsec.team_password_manager.team_password_manager:
+      auth: "auth:deploy"
+      get_password: 15982
+    register: single
+    # environment:
+    #   TPM_CONFIGURATION_FILE_PATH: /tpm/tpm.ini
+
+  - name: dump test output
+    debug:
+      msg: '{{ single }}'

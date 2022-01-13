@@ -1,0 +1,9 @@
+{
+    "ANSIBLE_MODULE_ARGS": {
+        "auth": "auth:deploy",
+        "get_password": 15981,
+        "get_passwords": [15982, 16445, 16480, 16462],
+        "get_passwords_from_project": 554,
+        "get_passwords_from_projects": [555, 1091]
+    }
+}

@@ -1,0 +1,15 @@
+[MASTER]
+good-names=
+    id,
+    ID
+disable=
+    C0114, # missing-module-docstring
+    C0115, # missing-class-docstring
+    C0116, # missing-function-docstring
+    E0401, # import-error
+    R0201, # no-self-use
+    R0902, # too-many-instance-attributes
+    R0903, # too-few-public-methods
+    R0913, # too-many-arguments
+    W0622, # redefined-builtin
+    E0611, # no-name-in-module

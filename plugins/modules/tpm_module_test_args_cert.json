@@ -1,0 +1,9 @@
+{
+    "ANSIBLE_MODULE_ARGS": {
+        "auth": "auth:deploycertbot",
+        "get_cert_from_project": {
+            "pid": 123,
+            "name": "my.domain.name"
+        }
+    }
+}
