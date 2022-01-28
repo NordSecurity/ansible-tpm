@@ -1,3 +1,6 @@
+# Blog post
+[How we manipulate passwords using Ansible](https://nordsecurity.com/blog/manipulating-passwords-using-ansible)
+
 # Ansible Collection - nordsec.team_password_manager
 This collections has a module and filter wrapper for https://teampasswordmanager.com
 
